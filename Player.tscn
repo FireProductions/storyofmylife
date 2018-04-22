@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Platforming Portions/KinematicBody2D.gd" type="Script" id=1]
+[ext_resource path="res://assets/platforming/character.png" type="Texture" id=2]
+
+[sub_resource type="CapsuleShape2D" id=1]
+
+custom_solver_bias = 0.0
+radius = 25.0
+height = 37.0
+
+[node name="Player" type="KinematicBody2D" index="0"]
+
+editor/display_folded = true
+position = Vector2( 90, 90 )
+scale = Vector2( 0.96875, 0.96875 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="." index="0"]
+
+scale = Vector2( 0.9, 0.9 )
+texture = ExtResource( 2 )
+offset = Vector2( -4, 0 )
+_sections_unfolded = [ "Offset" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+
+position = Vector2( -10, 0 )
+shape = SubResource( 1 )
+
+
