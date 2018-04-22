@@ -1,0 +1,46 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://LevelComplete.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/platforming/tilesets/brain_tileset.tres" type="TileSet" id=2]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://KillPlane.tscn" type="PackedScene" id=4]
+
+[node name="Walk" type="Node"]
+
+[node name="LevelComplete" parent="." index="0" instance=ExtResource( 1 )]
+
+editor/display_folded = false
+position = Vector2( 660, 130 )
+worldLocation = "res://Novel Portions/DemoEnd.tscn"
+
+[node name="TileMap" type="TileMap" parent="." index="1"]
+
+mode = 0
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 32, 32 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( 327681, 0, 0, 327682, 1, 0, 327683, 1, 0, 327684, 1, 0, 327685, 2, 0, 327698, 0, 0, 327699, 1, 0, 327700, 1, 0, 327701, 1, 0, 327702, 1, 0, 327703, 1, 0, 327704, 2, 0, 393217, 7, 0, 393218, 6, 0, 393219, 6, 0, 393220, 6, 0, 393221, 3, 0, 393234, 8, 0, 393235, 5, 0, 393236, 5, 0, 393237, 5, 0, 393238, 5, 0, 393239, 5, 0, 393240, 4, 0, 458753, 8, 0, 458754, 5, 0, 458755, 5, 0, 458756, 5, 0, 458757, 4, 0, 458764, 0, 0, 458765, 1, 0, 458766, 1, 0, 458767, 1, 0, 458768, 2, 0, 524296, 0, 0, 524297, 1, 0, 524298, 2, 0, 524300, 8, 0, 524301, 5, 0, 524302, 5, 0, 524303, 5, 0, 524304, 4, 0, 589832, 8, 0, 589833, 5, 0, 589834, 4, 0 )
+_sections_unfolded = [ "Cell" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Player" parent="." index="2" instance=ExtResource( 3 )]
+
+position = Vector2( 90, 100 )
+
+[node name="Area2D" parent="." index="3" instance=ExtResource( 4 )]
+
+
